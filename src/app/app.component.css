@@ -1,4 +1,6 @@
-.d-flex {
-  display: flex;
-  justify-content: space-around;
+.flex-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr;
+  padding: 10px;
+  gap: 10px;
 }
