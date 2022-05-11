@@ -1,0 +1,11 @@
+<div class="d-flex">
+  <div>
+    <app-users *ngFor="let user of users" [users]="user"></app-users>
+  </div>
+  <div>
+    <app-posts *ngFor="let post of posts" [posts]="post"></app-posts>
+  </div>
+  <div>
+    <app-comments *ngFor="let comment of comments" [comments]="comment"></app-comments>
+  </div>
+</div>
