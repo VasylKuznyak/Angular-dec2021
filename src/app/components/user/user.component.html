@@ -1,0 +1,6 @@
+<div class="user_list">
+  <a [routerLink]="['user-details',user.id]" [state]="{user}">
+    <button>DETAILS</button>
+  </a>
+  <h2>{{user.id}}. {{user.name}}</h2>
+</div>

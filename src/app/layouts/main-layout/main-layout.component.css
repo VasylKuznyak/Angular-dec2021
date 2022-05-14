@@ -1,0 +1,22 @@
+.nav_buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+  padding-top: 1em;
+  gap: 2em;
+}
+
+.nav_buttons button {
+  background-color: maroon;
+  border: 2px red;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.nav_buttons button:hover {
+  background-color: firebrick;
+  border: 2px maroon;
+  cursor: pointer;
+}
+

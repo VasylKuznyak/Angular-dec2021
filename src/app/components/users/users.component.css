@@ -1,0 +1,4 @@
+.user_list_withDetails {
+  display: flex;
+  gap: 8em;
+}

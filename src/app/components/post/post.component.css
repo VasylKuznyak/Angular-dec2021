@@ -1,0 +1,25 @@
+.post_list {
+  display: flex;
+  gap: 1em;
+  color: brown;
+  padding-left: 2em;
+}
+
+.post_list a {
+  align-self: center;
+}
+
+.post_list button {
+  background-color: maroon;
+  width: 5em;
+  height: 2em;
+  border: 2px red;
+  color: white;
+  font-size: 1rem;
+}
+
+.post_list button:hover {
+  background-color: firebrick;
+  border: 2px maroon;
+  cursor: pointer;
+}

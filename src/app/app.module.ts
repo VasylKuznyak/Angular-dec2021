@@ -1,16 +1,57 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
 
-import { AppComponent } from './components/app/app.component';
+import {
+  AppComponent,
+  HomeComponent,
+  PostComponent,
+  PostDetailsComponent,
+  PostsComponent,
+  UserComponent,
+  UserDetailsComponent,
+  UsersComponent
+} from './components';
+import {MainLayoutComponent} from './layouts';
+
+const roots = [
+  {
+    path: '', component: MainLayoutComponent, children: [
+      {path: 'home', component: HomeComponent},
+      {
+        path: 'users', component: UsersComponent, children: [
+          {path: 'user-details/:userId', component: UserDetailsComponent}
+        ]
+      },
+      {
+        path: 'posts', component: PostsComponent, children: [
+          {path: 'post-details/:postId', component: PostDetailsComponent}
+        ]
+      }
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainLayoutComponent,
+    UsersComponent,
+    UserComponent,
+    HomeComponent,
+    UserDetailsComponent,
+    PostComponent,
+    PostsComponent,
+    PostDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot(roots)
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,0 +1,6 @@
+<div class="post_list">
+  <a [routerLink]="['post-details',post.id]" [state]="{post}">
+    <button>DETAILS</button>
+  </a>
+  <h4>{{post.id}}. {{post.title}}</h4>
+</div>
