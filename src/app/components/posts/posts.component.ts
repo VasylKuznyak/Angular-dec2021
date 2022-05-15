@@ -8,6 +8,7 @@ import {PostService} from "../../services";
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
+
 export class PostsComponent implements OnInit {
   posts: IPost[];
 

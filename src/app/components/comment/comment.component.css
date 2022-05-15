@@ -1,0 +1,25 @@
+.comment_list{
+  display: flex;
+  gap: 1em;
+  color: brown;
+  padding-left: 2em;
+}
+
+.comment_list a {
+  align-self: center;
+}
+
+.comment_list button {
+  background-color: maroon;
+  width: 5em;
+  height: 2em;
+  border: 2px red;
+  color: white;
+  font-size: 1rem;
+}
+
+.comment_list button:hover {
+  background-color: firebrick;
+  border: 2px maroon;
+  cursor: pointer;
+}

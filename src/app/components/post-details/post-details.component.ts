@@ -10,7 +10,7 @@ import {IPostDetails} from "../../interfaces";
   styleUrls: ['./post-details.component.css']
 })
 export class PostDetailsComponent implements OnInit {
-  post: IPostDetails;
+  postDetails: IPostDetails;
 
   constructor(private activatedRoute: ActivatedRoute, private postService: PostService) {
   }
@@ -19,9 +19,9 @@ export class PostDetailsComponent implements OnInit {
     this.activatedRoute.params.subscribe(({postId}) => {
       const {state: {post}} = history;
       if (post) {
-        return this.post = post;
+        return this.postDetails = post;
       }
-      this.postService.getById(postId).subscribe(post => this.post = post);
+      this.postService.getById(postId).subscribe(post => this.postDetails = post);
     })
   }
 

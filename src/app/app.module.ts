@@ -3,8 +3,12 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 
+import {MainLayoutComponent} from './layouts';
 import {
   AppComponent,
+  CommentComponent,
+  CommentDetailsComponent,
+  CommentsComponent,
   HomeComponent,
   PostComponent,
   PostDetailsComponent,
@@ -13,7 +17,6 @@ import {
   UserDetailsComponent,
   UsersComponent
 } from './components';
-import {MainLayoutComponent} from './layouts';
 
 const roots = [
   {
@@ -27,6 +30,11 @@ const roots = [
       {
         path: 'posts', component: PostsComponent, children: [
           {path: 'post-details/:postId', component: PostDetailsComponent}
+        ]
+      },
+      {
+        path: 'comments', component: CommentsComponent, children: [
+          {path: 'comment-details/:commentId', component: CommentDetailsComponent}
         ]
       }
     ]
@@ -43,7 +51,10 @@ const roots = [
     UserDetailsComponent,
     PostComponent,
     PostsComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    CommentsComponent,
+    CommentComponent,
+    CommentDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,4 @@
+.comment_list_withDetails {
+  display: flex;
+  gap: 5em;
+}

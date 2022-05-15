@@ -1,4 +1,7 @@
 export * from './app/app.component';
+export * from './comment/comment.component';
+export * from './comment-details/comment-details.component';
+export * from './comments/comments.component';
 export * from './home/home.component';
 export * from './post/post.component';
 export * from './post-details/post-details.component';

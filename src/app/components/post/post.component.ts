@@ -1,5 +1,4 @@
-import
-{Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IPost} from "../../interfaces";
 
@@ -8,6 +7,7 @@ import {IPost} from "../../interfaces";
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
+
 export class PostComponent implements OnInit {
   @Input()
   post: IPost;
