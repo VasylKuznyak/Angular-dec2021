@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
-import {RouterModule} from "@angular/router";
+import {Route, RouterModule} from "@angular/router";
 
 import {MainLayoutComponent} from './layouts';
 import {
@@ -18,9 +18,10 @@ import {
   UsersComponent
 } from './components';
 
-const roots = [
+const roots: Route[] = [
   {
     path: '', component: MainLayoutComponent, children: [
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'home', component: HomeComponent},
       {
         path: 'users', component: UsersComponent, children: [
