@@ -1,0 +1,16 @@
+.mainNavigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.mainNavigation_link {
+  color: indigo;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+.mainNavigation_active {
+  color: red;
+}
