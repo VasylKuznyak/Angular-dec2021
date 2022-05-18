@@ -4,11 +4,13 @@
 }
 
 body {
-  background-color: lightcyan;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,0.36738445378151263) 10%, rgba(147,112,219,0.5550595238095238) 80%);
 }
 
 .mainListAll {
   padding-top: 20px;
+  min-height: 100vh;
 }
 
 .mainList {

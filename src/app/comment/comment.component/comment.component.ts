@@ -1,15 +1,15 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
-import {IPost} from "../../interfaces";
+import {IComment} from "../../interfaces";
 
 @Component({
-  selector: 'app-post',
-  templateUrl: './post.component.html',
+  selector: 'app-comment',
+  templateUrl: './comment.component.html',
 })
-export class PostComponent implements OnInit {
+export class CommentComponent implements OnInit {
   @Input()
-  post: IPost;
+  comment: IComment;
 
   constructor(
     private router: Router,
@@ -21,9 +21,9 @@ export class PostComponent implements OnInit {
   }
 
   getDetails() {
-    this.router.navigate([this.post.id], {
+    this.router.navigate([this.comment.id], {
       relativeTo: this.activatedRoute,
-      state: {post: this.post}
-    }).then();
+      state: {comment: this.comment}
+    });
   }
 }
