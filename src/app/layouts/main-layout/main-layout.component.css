@@ -1,8 +1,10 @@
 .mainNavigation {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-top: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 20px 0 20px;
   text-align: center;
+  background-color: mediumpurple;
+  border-bottom: 1px solid black;
 }
 
 .mainNavigation_link {
@@ -12,5 +14,6 @@
 }
 
 .mainNavigation_active {
-  color: red;
+  color: lightcyan;
+  transform: scale(1.1);
 }

@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: lightcyan;
+}
+
+.mainListAll {
+  padding-top: 20px;
+}
+
+.mainList {
+  display: grid;
+  grid-template-columns: repeat(10, 5em);
+}
+
+.mainList_name {
+  color: indigo;
+  grid-column: 2/10;
+  align-self: center;
+  padding: .5em;
+}
+
+.mainList_button {
+  padding: .5em;
+  background-color: indigo;
+  border: none;
+  color: white;
+  margin: auto
+}
+
+.mainList_button:focus {
+  background-color: mediumpurple;
+  transform: scale(1.1);
+}
+
+.listDetails {
+  color: indigo;
+  text-align: center;
+}
+

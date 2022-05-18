@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {MainLayoutComponent} from './layouts';
-
+import {MainLayoutComponent} from '../layouts';
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 
@@ -18,5 +17,6 @@ import {AppComponent} from "./app.component";
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

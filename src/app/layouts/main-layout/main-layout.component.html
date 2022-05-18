@@ -2,5 +2,10 @@
   <a [routerLink]="'/home'" [routerLinkActive]="'mainNavigation_active'" class="mainNavigation_link">HOME</a>
   <a [routerLink]="'/users'" [routerLinkActive]="'mainNavigation_active'" class="mainNavigation_link">USERS</a>
   <a [routerLink]="'/posts'" [routerLinkActive]="'mainNavigation_active'" class="mainNavigation_link">POSTS</a>
+  <a [routerLink]="'/comments'" [routerLinkActive]="'mainNavigation_active'" class="mainNavigation_link">COMMENTS</a>
+  <a [routerLink]="'/todos'" [routerLinkActive]="'mainNavigation_active'" class="mainNavigation_link">TODOS</a>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="mainListAll">
+  <router-outlet></router-outlet>
+</div>
