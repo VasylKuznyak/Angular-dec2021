@@ -4,8 +4,8 @@
 }
 
 body {
-  background: rgb(34,193,195);
-  background: linear-gradient(0deg, rgba(34,193,195,0.36738445378151263) 10%, rgba(147,112,219,0.5550595238095238) 80%);
+  background: rgb(34, 193, 195);
+  background: linear-gradient(0deg, rgba(34, 193, 195, 0.36738445378151263) 10%, rgba(147, 112, 219, 0.5550595238095238) 80%);
 }
 
 .mainListAll {
@@ -15,7 +15,7 @@ body {
 
 .mainList {
   display: grid;
-  grid-template-columns: repeat(10, 5em);
+  grid-template-columns: repeat(8, 5em);
 }
 
 .mainList_name {
@@ -43,3 +43,7 @@ body {
   text-align: center;
 }
 
+.list-details {
+  display: flex;
+  padding: 20px;
+}

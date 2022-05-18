@@ -1,6 +1,6 @@
 .mainNavigation {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   padding: 20px 0 20px;
   text-align: center;
   background-color: mediumpurple;
@@ -15,5 +15,4 @@
 
 .mainNavigation_active {
   color: lightcyan;
-  transform: scale(1.1);
 }
