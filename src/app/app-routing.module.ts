@@ -13,6 +13,7 @@ const routes: Routes = [
       {path: 'users', loadChildren: () => import('./modules').then(module => module.UserModule)},
       {path: 'posts', loadChildren: () => import('./modules').then(module => module.PostModule)},
       {path: 'comments', loadChildren: () => import('./modules').then(module => module.CommentModule)},
+      {path: 'todos', loadChildren: () => import('./modules').then(module => module.TodoModule)}
     ]
   }
 ];

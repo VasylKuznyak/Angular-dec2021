@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+
 import {PostService} from "../../services";
 import {IPost} from "../../interfaces";
 
@@ -14,8 +15,7 @@ export class PostDetailsComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private postService: PostService,
-  ) {
+    private postService: PostService) {
   }
 
   ngOnInit(): void {
