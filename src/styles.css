@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+
+.listWithDetails {
+  display: flex;
+  column-gap: 10em;
+  padding-top: 2em;
+}
+
+.baseList {
+  display: flex;
+  column-gap: 1em;
+}
+
+.baseList_button {
+  margin: .5em 0 0 2em;
+  padding: .5em;
+  border: 1px solid grey;
+  background-color: darkgray;
+  color: snow;
+}
+
+.baseList_button:focus {
+  border: 2px solid snow;
+}
+
+.baseList_title {
+  align-self: center;
+}
+
+.listOfDetails {
+  padding: 2em;
+  border: 1px dashed black;
+  text-align: center;
+  align-items: center;
+}

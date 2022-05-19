@@ -1,0 +1,27 @@
+.mainLayoutNavbar {
+  display: grid;
+  grid-template-columns: repeat(4, 4fr);
+  grid-template-rows: repeat(3, 3fr);
+  text-align: center;
+  border-bottom: 2px solid black;
+  background-color: darkgray;
+  align-items: center;
+}
+
+.mainLayoutNavbar_link {
+  grid-row: 2/3;
+}
+
+.mainLayoutNavbar_link {
+  grid-row: 2/3;
+}
+
+.mainLayoutNavbar_link:hover {
+  cursor: pointer;
+}
+
+.mainLayoutNavbar_link_active {
+  text-decoration: underline;
+  padding: .2em;
+  border: 1px solid snow;
+}
