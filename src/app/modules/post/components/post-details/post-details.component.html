@@ -1,1 +1,4 @@
-<p>post-details works!</p>
+<div *ngIf="postDetails" class="listOfDetails">
+  <h2>{{postDetails.id}}. {{postDetails.title}}</h2>
+  <h4>{{postDetails.body}}</h4>
+</div>

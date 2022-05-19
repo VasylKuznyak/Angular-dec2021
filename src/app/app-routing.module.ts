@@ -8,9 +8,11 @@ import {MainLayoutComponent} from "./layouts";
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      {path: 'home', loadChildren: () => import('./modules').then(module => module.HomeModule)},
       {path: 'users', loadChildren: () => import('./modules').then(module => module.UserModule)},
-      {path: 'posts', loadChildren: () => import('./modules').then(module => module.PostModule)}
-
+      {path: 'posts', loadChildren: () => import('./modules').then(module => module.PostModule)},
+      {path: 'comments', loadChildren: () => import('./modules').then(module => module.CommentModule)},
     ]
   }
 ];

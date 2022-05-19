@@ -1,6 +1,6 @@
 .mainLayoutNavbar {
   display: grid;
-  grid-template-columns: repeat(4, 4fr);
+  grid-template-columns: repeat(5, 5fr);
   grid-template-rows: repeat(3, 3fr);
   text-align: center;
   border-bottom: 2px solid black;

@@ -6,7 +6,7 @@
 
 .listWithDetails {
   display: flex;
-  column-gap: 10em;
+  column-gap: 6em;
   padding-top: 2em;
 }
 
@@ -32,8 +32,9 @@
 }
 
 .listOfDetails {
+  max-width: 31.25em;
   padding: 2em;
+  margin: 2em;
   border: 1px dashed black;
   text-align: center;
-  align-items: center;
 }
