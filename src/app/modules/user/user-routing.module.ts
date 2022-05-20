@@ -1,14 +1,20 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import {HttpClientModule} from "@angular/common/http";
 
 import {UserDetailsComponent, UsersComponent} from "./components";
-import {UserService} from "./services";
-import {HttpClientModule} from "@angular/common/http";
+import {UserActivateGuard, UserDeactivateGuard, UserResolver, UsersResolver} from "./services";
 
 const routes: Routes = [
   {
-    path: '', component: UsersComponent, children: [
-      {path: ':id', component: UserDetailsComponent}
+    path: '', component: UsersComponent,
+    resolve: {usersData: UsersResolver},
+    canActivate: [UserActivateGuard],
+    canDeactivate: [UserDeactivateGuard],
+
+    children: [
+      {path: ':id', component: UserDetailsComponent,
+        resolve: {userData: UserResolver}}
     ]
   }
 ];
@@ -16,7 +22,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes), HttpClientModule],
   exports: [RouterModule],
-  providers: [UserService],
 })
 export class UserRoutingModule {
 }

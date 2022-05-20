@@ -7,10 +7,11 @@ import {MainLayoutComponent} from "./layouts/main-layout/main-layout.component";
 const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
-      {path: 'users', loadChildren: () => import('./modules').then(module => module.UserModule)}
+      {path: 'users', loadChildren: () => import('./modules').then(module => module.UserModule)},
+      {path: 'posts', loadChildren: () => import('./modules').then(module => module.PostModule)}
     ]
   }
-]
+];
 
 @NgModule({
   declarations: [],

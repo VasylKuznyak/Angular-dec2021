@@ -1,3 +1,3 @@
 export * from './guards';
 export * from './resolvers';
-export * from './user.service';
+export * from './post.service';

@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {UserRoutingModule} from './user-routing.module';
 import {UserComponent, UserDetailsComponent, UsersComponent} from './components';
+import {UserActivateGuard, UserDeactivateGuard, UserResolver, UserService, UsersResolver} from "./services";
 
 @NgModule({
   declarations: [
@@ -13,6 +14,14 @@ import {UserComponent, UserDetailsComponent, UsersComponent} from './components'
   imports: [
     CommonModule,
     UserRoutingModule
+  ],
+  providers: [
+    UserService,
+    UsersResolver,
+    UserResolver,
+    UserDeactivateGuard,
+    UserActivateGuard
   ]
 })
-export class UserModule { }
+export class UserModule {
+}
