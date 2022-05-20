@@ -1,0 +1,25 @@
+.mainNavMenu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #101010;
+  border-bottom: 2px solid snow;
+  height: 60px;
+}
+
+.mainNavMenu_link {
+  text-decoration: none;
+  font-size: 1.2em;
+  text-align: center;
+  grid-row: 2/3;
+  color: silver;
+}
+
+.mainNavMenu_link:hover {
+  cursor: pointer;
+}
+
+.mainNavMenu_active {
+  color: snow;
+  transform: scale(1.2);
+}

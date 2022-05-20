@@ -1,0 +1,5 @@
+.mainNavMenu {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-template-rows: repeat(3, 3fr);
+}
