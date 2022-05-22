@@ -3,7 +3,13 @@ import {CommonModule} from '@angular/common';
 
 import {UserRoutingModule} from './user-routing.module';
 import {UserComponent, UserDetailsComponent, UsersComponent} from './components';
-import {UserActivateGuard, UserDeactivateGuard, UserResolver, UserService, UsersResolver} from "./services";
+import {
+  UserActivateGuard,
+  UserDeactivateGuard,
+  UserResolver,
+  UserService,
+  UsersResolver
+} from "./services";
 
 @NgModule({
   declarations: [

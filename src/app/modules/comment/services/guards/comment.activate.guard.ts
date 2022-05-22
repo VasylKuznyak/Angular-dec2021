@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class PostActivateGuard implements CanActivate {
+export class CommentActivateGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return confirm('Перейти на сторінку POSTS');
+    return confirm('Перейти на сторінку Comments');
   }
 
 }

@@ -3,7 +3,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 
 import {UserDetailsComponent, UsersComponent} from "./components";
-import {UserActivateGuard, UserDeactivateGuard, UserResolver, UsersResolver} from "./services";
+import {
+  UserActivateGuard,
+  UserDeactivateGuard,
+  UserResolver,
+  UsersResolver
+} from "./services";
 
 const routes: Routes = [
   {

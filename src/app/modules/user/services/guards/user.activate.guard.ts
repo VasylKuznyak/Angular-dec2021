@@ -9,7 +9,7 @@ export class UserActivateGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return confirm('Зайти на сторінку USERS');
+    return confirm('Перейти на сторінку USERS');
   }
 
 }

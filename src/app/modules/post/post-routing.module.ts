@@ -3,7 +3,12 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 
 import {PostDetailsComponent, PostsComponent} from "./components";
-import {PostActivateGuard, PostDeactivateGuard, PostResolver, PostsResolver} from "./services";
+import {
+  PostActivateGuard,
+  PostDeactivateGuard,
+  PostResolver,
+  PostsResolver
+} from "./services";
 
 const routes: Routes = [
   {

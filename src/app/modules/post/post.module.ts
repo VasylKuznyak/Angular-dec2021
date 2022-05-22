@@ -3,7 +3,13 @@ import {CommonModule} from '@angular/common';
 
 import {PostRoutingModule} from './post-routing.module';
 import {PostComponent, PostDetailsComponent, PostsComponent} from './components';
-import {PostActivateGuard, PostDeactivateGuard, PostService, PostsResolver} from "./services";
+import {
+  PostActivateGuard,
+  PostDeactivateGuard,
+  PostResolver,
+  PostService,
+  PostsResolver
+} from "./services";
 
 @NgModule({
   declarations: [
@@ -19,7 +25,7 @@ import {PostActivateGuard, PostDeactivateGuard, PostService, PostsResolver} from
     PostActivateGuard,
     PostDeactivateGuard,
     PostsResolver,
-    PostService,
+    PostResolver,
     PostService
   ]
 })
