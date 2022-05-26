@@ -1,0 +1,19 @@
+.mainNavBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 4em;
+  background-color: lavenderblush;
+  border-bottom: 2px solid purple;
+}
+
+.mainNavBar_link {
+  color: purple;
+  text-decoration: none;
+  padding: .5em;
+  border: 1px dashed rebeccapurple;
+}
+
+.mainNavBar_link_active {
+  border: 2px solid rebeccapurple;
+}
