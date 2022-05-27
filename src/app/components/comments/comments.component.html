@@ -1,0 +1,2 @@
+<app-comment *ngFor="let comment of comments" [comment]="comment" class="mainListAll"
+             (commentEmit)="getComment($event)"></app-comment>
