@@ -1,17 +1,11 @@
-<div class="listOfLists">
-  <div class="mainListAll">
-    <h1>{{user?.email}}</h1>
-    <app-users (userEmitter)="userEmitter($event)"></app-users>
+<div class="mainWrapper">
+  <div class="mainWrapper_element"><h1 *ngIf="user">{{user.id}} {{user.email}}</h1>
+    <app-users></app-users>
   </div>
-
-  <div class="mainListAll">
-    <h1>{{post?.title}}</h1>
-    <app-posts (postEmitter)="postEmitter($event)"></app-posts>
+  <div class="mainWrapper_element"><h1 *ngIf="post">{{post.id}} {{post.body}}</h1>
+    <app-posts></app-posts>
   </div>
-
-  <div class="mainListAll">
-    <h1>{{comment?.email}}</h1>
-    <app-comments (commentEmitter)="commentEmitter($event)"></app-comments>
+  <div class="mainWrapper_element"><h1 *ngIf="comment">{{comment.id}} {{comment.email}}</h1>
+    <app-comments></app-comments>
   </div>
 </div>
-

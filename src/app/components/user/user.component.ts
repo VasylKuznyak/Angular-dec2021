@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IUser} from "../../interfaces";
+import {DataService} from "../../services";
 
 @Component({
   selector: 'app-user',
@@ -9,17 +10,15 @@ import {IUser} from "../../interfaces";
 })
 export class UserComponent implements OnInit {
   @Input()
-  user: IUser;
-  @Output()
-  userEmitter = new EventEmitter<IUser>();
+  user: IUser
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
   }
 
-  emit(user: IUser) {
-    this.userEmitter.emit(user);
+  saveToStorage() {
+    this.dataService.userStorage.next(this.user);
   }
 }

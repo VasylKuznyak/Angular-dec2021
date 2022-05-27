@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {CommentService} from "../../services";
 import {IComment} from "../../interfaces";
@@ -10,8 +10,6 @@ import {IComment} from "../../interfaces";
 })
 export class CommentsComponent implements OnInit {
   comments: IComment[];
-  @Output()
-  commentEmitter = new EventEmitter<IComment>();
 
   constructor(private commentService: CommentService) {
   }
@@ -20,7 +18,4 @@ export class CommentsComponent implements OnInit {
     this.commentService.getAll().subscribe(comments => this.comments = comments);
   }
 
-  getComment(comment: IComment) {
-    this.commentEmitter.emit(comment);
-  }
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {PostService} from "../../services";
 import {IPost} from "../../interfaces";
@@ -10,8 +10,6 @@ import {IPost} from "../../interfaces";
 })
 export class PostsComponent implements OnInit {
   posts: IPost[];
-  @Output()
-  postEmitter = new EventEmitter<IPost>();
 
   constructor(private postService: PostService) {
   }
@@ -20,7 +18,4 @@ export class PostsComponent implements OnInit {
     this.postService.getAll().subscribe(posts => this.posts = posts);
   }
 
-  catchPost(post: IPost) {
-    this.postEmitter.emit(post);
-  }
 }

@@ -1,38 +1,8 @@
-* {
-  margin: 0;
-  padding: 0;
+.mainWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
 }
 
-.nameWithButton {
-  display: flex;
-  column-gap: 5em;
-}
-
-.nameWithButton button {
-  padding: .5em;
-  width: 4em;
-  height: 3em;
-  align-self: center;
-}
-
-.nameWithButton h3 {
-  align-self: center;
-  width: 220px;
-}
-
-.mainListItem {
-  padding: 2em;
-}
-
-.mainListAll {
-  padding: 2em;
-}
-
-.listOfLists {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.mainListAll h1{
-  max-width: 30%;
+.mainWrapper_element {
+  text-align: center;
 }

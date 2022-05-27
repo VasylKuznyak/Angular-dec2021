@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 
+import {DataService} from "./services";
 import {IComment, IPost, IUser} from "./interfaces";
 
 @Component({
@@ -11,15 +12,9 @@ export class AppComponent {
   post: IPost;
   comment: IComment;
 
-  userEmitter(user: IUser) {
-    this.user = user;
-  }
-
-  postEmitter(post: IPost) {
-    this.post = post;
-  }
-
-  commentEmitter(comment: IComment) {
-    this.comment = comment;
+  constructor(private dataService: DataService) {
+    dataService.userStorage.subscribe(users => this.user = users);
+    dataService.postStorage.subscribe(posts => this.post = posts);
+    dataService.commentStorage.subscribe(comment => this.comment = comment);
   }
 }

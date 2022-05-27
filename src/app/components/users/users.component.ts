@@ -1,7 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import {UserService} from "../../services";
 import {IUser} from "../../interfaces";
+import {UserService} from "../../services";
 
 @Component({
   selector: 'app-users',
@@ -10,8 +10,6 @@ import {IUser} from "../../interfaces";
 })
 export class UsersComponent implements OnInit {
   users: IUser[];
-  @Output()
-  userEmitter = new EventEmitter<IUser>();
 
   constructor(private userService: UserService) {
   }
@@ -20,7 +18,4 @@ export class UsersComponent implements OnInit {
     this.userService.getAll().subscribe(users => this.users = users);
   }
 
-  getEmitter(user: IUser) {
-    this.userEmitter.emit(user);
-  }
 }

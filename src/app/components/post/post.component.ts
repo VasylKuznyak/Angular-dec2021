@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IPost} from "../../interfaces";
+import {DataService} from "../../services";
 
 @Component({
   selector: 'app-post',
@@ -10,16 +11,14 @@ import {IPost} from "../../interfaces";
 export class PostComponent implements OnInit {
   @Input()
   post: IPost;
-  @Output()
-  postEmitter = new EventEmitter<IPost>();
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
   }
 
-  emit(post: IPost) {
-    this.postEmitter.emit(post);
+  saveToStorage() {
+    this.dataService.postStorage.next(this.post);
   }
 }

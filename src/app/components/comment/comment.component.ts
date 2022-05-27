@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {IComment} from "../../interfaces";
+import {DataService} from "../../services";
 
 @Component({
   selector: 'app-comment',
@@ -9,17 +10,15 @@ import {IComment} from "../../interfaces";
 })
 export class CommentComponent implements OnInit {
   @Input()
-  comment: IComment;
-  @Output()
-  commentEmit = new EventEmitter<IComment>();
+  comment: IComment
 
-  constructor() {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
   }
 
-  emit(comment: IComment) {
-    this.commentEmit.emit(comment);
+  saveToStorage() {
+    this.dataService.commentStorage.next(this.comment);
   }
 }
