@@ -1,0 +1,30 @@
+.header {
+  height: 50px;
+  background-color: var(--darkBackground);
+  font-family: var(--font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 40px;
+  padding: 10px;
+}
+
+.header_image {
+  height: 100%;
+  width: 50px;
+}
+
+.header_link {
+  text-decoration: none;
+  font-family: var(--font);
+  color: var(--lightText);
+  font-size: 1.5em;
+}
+
+.header_link:hover {
+  cursor: pointer;
+}
+
+.header_link__active {
+  color: var(--colorText);
+}
