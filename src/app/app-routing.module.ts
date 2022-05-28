@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '', component: MainLayoutComponent, children: [
       {path: '', redirectTo: 'movies', pathMatch: 'full'},
-      {path: 'movies', loadChildren: () => import('./modules').then(module => module.MoviesListModule)}
+      {path: 'movies', loadChildren: () => import('./modules').then(module => module.MoviesModule)}
     ]
   }
 ];

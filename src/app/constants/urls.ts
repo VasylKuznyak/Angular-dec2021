@@ -1,11 +1,10 @@
-// https://api.themoviedb.org/3/discover/movie?api_key=c21c4736c06ada4156758164d503e231
-// https://api.themoviedb.org/3/genre/movie/list?api_key=c21c4736c06ada4156758164d503e231
 import {environment} from "../../environments/environment";
-import {apiKey} from "./apiKey";
 
+export const imageURL = 'https://image.tmdb.org/t/p/w500';
 const {baseURL} = environment;
 
 export const urls = {
-  movies: `${baseURL}/discover/movie?api_key=${apiKey}`,
-  genre: `${baseURL}/genre/movie?api_key=${apiKey}`,
+  movies: `${baseURL}/discover/movie`,
+  movie: `${baseURL}/movie`,
+  genre: `${baseURL}/genre/movie/list`,
 }

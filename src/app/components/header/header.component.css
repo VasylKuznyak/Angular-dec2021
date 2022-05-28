@@ -1,12 +1,14 @@
 .header {
+  width: 100vw;
   height: 50px;
-  background-color: var(--darkBackground);
+  background-color: rgb(0, 0, 0);
   font-family: var(--font);
   display: flex;
-  justify-content: center;
+  column-gap: 383px;
   align-items: center;
-  column-gap: 40px;
-  padding: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  z-index: 1;
 }
 
 .header_image {
@@ -14,10 +16,24 @@
   width: 50px;
 }
 
+.header_links {
+  display: flex;
+}
+
+.header_links h2 {
+  color: var(--colorText);
+}
+
+.header_links h2:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 .header_link {
+  margin: 0 100px;
   text-decoration: none;
   font-family: var(--font);
-  color: var(--lightText);
+  color: var(--colorText);
   font-size: 1.5em;
 }
 
@@ -25,6 +41,6 @@
   cursor: pointer;
 }
 
-.header_link__active {
-  color: var(--colorText);
+.header_image_user {
+  height: 100%;
 }

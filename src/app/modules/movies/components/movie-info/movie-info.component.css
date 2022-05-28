@@ -1,0 +1,35 @@
+.movieInfo {
+  display: flex;
+  justify-content: center;
+  padding-top: 3.5em;
+}
+
+.movieInfo_img {
+  margin-top: 2em;
+  width: 70%;
+  border-radius: 1em;
+  box-shadow: 0 0 11px black;
+  opacity: .7;
+}
+
+.movieInfo_description {
+  position: absolute;
+  top: 150px;
+  padding: 1em;
+  width: 50%;
+  color: var(--darkText);
+  font-family: var(--font);
+  text-align: center;
+}
+
+.movieInfo_description_title {
+  color: var(--colorText);
+  -webkit-text-stroke: .2px black;
+  font-size: 4em;
+}
+
+.movieInfo_description h3 {
+  padding: 1em;
+  font-size: 1.5em;
+  -webkit-text-stroke: .5px black;
+}

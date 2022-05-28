@@ -4,6 +4,14 @@
     src="https://thumbs.dreamstime.com/b/%D0%B7%D0%BD%D0%B0%D1%87%D0%BE%D0%BA-%D0%BA%D0%B8%D0%BD%D0%BE-%D1%81%D1%82%D0%B8%D0%BA%D0%B5%D1%80-%D1%89%D0%B8%D1%82%D0%BA%D0%B0-%D1%84%D0%B8%D0%BB%D1%8C%D0%BC%D0%B0-%D0%BD%D0%B0-%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D0%B9-%D0%BF%D1%80%D0%B5%D0%B4%D0%BF%D0%BE%D1%81%D1%8B%D0%BB%D0%BA%D0%B5-117431578.jpg"
     alt="film logo">
 
-  <a [routerLink]="'movies'" class="header_link" [routerLinkActive]="'header_link__active'">MOVIES</a>
-  <a [routerLink]="'genres'" class="header_link" [routerLinkActive]="'header_link__active'">GENRES</a>
+  <div class="header_links">
+    <h2 (click)="pageBack()"><</h2>
+    <a [routerLink]="'movies'" class="header_link">MOVIES LIST</a>
+    <h2 (click)="pageForward()">></h2>
+  </div>
+
+  <img
+    class="header_image_user"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNVl7iBiPSH4glYgRCbnZe6AK_oJ5XgaySRpUKfeho13Vr9TPu9oby3Dh3w28DZivdvpM&usqp=CAU"
+    alt="user icon">
 </header>

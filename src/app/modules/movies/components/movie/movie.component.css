@@ -1,0 +1,41 @@
+.movieCard {
+  margin: 0 1em 1em;
+  width: 24.3em;
+  opacity: .8;
+}
+
+.movieCard_title {
+  position: relative;
+  bottom: 2em;
+  font-family: var(--font);
+  color: white;
+  text-align: center;
+}
+
+.movieCard:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+.movieCard_image {
+  width: 100%;
+}
+
+.movieCard_rating:before {
+  background-image: url("src/app/images/rating_star.png");
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content:"";
+}
+
+.movieCard_rating {
+  position: relative;
+  color: white;
+  -webkit-text-stroke: .5px var(--colorText);
+  top: 2em;
+  left: 10px;
+}
+
