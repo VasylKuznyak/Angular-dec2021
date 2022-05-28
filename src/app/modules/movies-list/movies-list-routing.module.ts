@@ -2,10 +2,11 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
 
-import {MoviesListComponent} from "./components";
+import {MovieInfoComponent, MoviesListComponent} from "./components";
 
 const routes: Routes = [
-  {path: '', component: MoviesListComponent}
+  {path: '', component: MoviesListComponent},
+  {path: ':id', component: MovieInfoComponent}
 ];
 
 @NgModule({
@@ -13,6 +14,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule
   ],
+
   exports: [RouterModule]
 })
 export class MoviesListRoutingModule {

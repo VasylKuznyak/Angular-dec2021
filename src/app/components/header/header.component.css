@@ -1,17 +1,22 @@
 .header {
   height: 50px;
-  background-color: var(--darkBackground);
+  background-color: rgb(0, 0, 0);
   font-family: var(--font);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 40px;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .header_image {
   height: 100%;
   width: 50px;
+}
+
+.header_links {
+  display: flex;
+  column-gap: 60px;
+  padding-left: 130px;
 }
 
 .header_link {
@@ -28,3 +33,16 @@
 .header_link__active {
   color: var(--colorText);
 }
+
+.header_inputs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  padding: 2px;
+}
+
+.header_inputs input {
+  background-color: lightblue;
+  color: black;
+}
+

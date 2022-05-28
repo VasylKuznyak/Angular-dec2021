@@ -6,11 +6,11 @@
 }
 
 :root {
-  --darkText: black;
-  --darkBackground: black;
-  --lightText: snow;
-  --lightBackground: snow;
+  --darkText: rgb(40,40,40);
+  --darkBackground: rgb(40,40,40);
+  --lightText: rgb(240,240,240);
+  --lightBackground: rgb(160,160,160);
   --colorText: deepskyblue;
-  --font:'Karla', sans-serif;
+  --font: 'Karla', sans-serif;
 }
 
