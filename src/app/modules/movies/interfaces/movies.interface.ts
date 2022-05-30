@@ -1,6 +1,6 @@
 import {IMovie} from "./movie.intrerface";
 
-export interface IMovies {
+export interface IMovies{
   page: string,
   results: IMovie[];
   total_pages: number;

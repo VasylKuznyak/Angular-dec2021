@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {MoviesRoutingModule} from './movies-routing.module';
-import {MovieComponent, MovieInfoComponent, MoviesListComponent} from './components';
+import {MovieComponent, MovieInfoComponent, MoviesListComponent,} from './components';
 import {MoviesService} from "./services";
 
 @NgModule({

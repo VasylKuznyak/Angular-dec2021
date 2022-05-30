@@ -1,0 +1,17 @@
+.movieInfo {
+  display: flex;
+  justify-content: center;
+}
+
+.movieInfo_description {
+  color: var(--darkText);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+}
+
+.movieInfo_image {
+  width: 100vw;
+}

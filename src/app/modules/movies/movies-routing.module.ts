@@ -17,7 +17,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HttpClientModule
   ],
-
   exports: [RouterModule]
 })
 export class MoviesRoutingModule {

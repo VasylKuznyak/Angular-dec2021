@@ -10,8 +10,10 @@ import {imageURL} from "../../../../constants";
   styleUrls: ['./movie.component.css']
 })
 export class MovieComponent implements OnInit {
-  @Input() movie: IMovie;
-  @Input() imageEndpoint: string;
+  @Input()
+  movie: IMovie;
+  @Input()
+  imageEndpoint: string;
   image: string;
 
   constructor(

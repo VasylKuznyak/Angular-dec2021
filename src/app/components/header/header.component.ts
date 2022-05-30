@@ -19,6 +19,9 @@ export class HeaderComponent implements OnInit {
     this.currentPage = this.activatedRoute.queryParamMap.pipe(
       map((params: ParamMap) => params.get('page')));
     this.currentPage.subscribe(page => this.currentPage = page);
+    this.router.navigate(
+      [],
+      {queryParams: {page: 1}}).then();
   }
 
   pageForward(): void {
