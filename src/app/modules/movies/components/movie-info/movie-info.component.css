@@ -6,10 +6,10 @@
 
 .movieInfo_description {
   border-radius: 10px;
-  box-shadow: 0 0 2em black;
-  color: var(--lightText);
+  box-shadow: 0 0 2em var(--darkBackground);
+  color: var(--darkText);
   font-size: 2em;
-  -webkit-text-stroke: 1px var(--darkText);
+  -webkit-text-stroke: .5px var(--lightText);
   text-align: center;
   display: flex;
   flex-direction: column;

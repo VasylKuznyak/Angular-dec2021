@@ -1,19 +1,21 @@
-import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
 
-import {MoviesRoutingModule} from './movies-routing.module';
 import {MovieComponent, MovieInfoComponent, MoviesListComponent,} from './components';
+import {MoviesRoutingModule} from './movies-routing.module';
+import {HttpModule} from "../../http.module";
 import {MoviesService} from "./services";
 
 @NgModule({
   declarations: [
     MoviesListComponent,
-    MovieComponent,
     MovieInfoComponent,
+    MovieComponent,
   ],
   imports: [
-    CommonModule,
     MoviesRoutingModule,
+    CommonModule,
+    HttpModule
   ],
   providers: [
     MoviesService

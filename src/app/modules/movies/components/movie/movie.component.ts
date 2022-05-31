@@ -1,9 +1,11 @@
-import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {Component, Input, OnInit} from '@angular/core';
 import {map, Observable} from "rxjs";
 
+import {environment} from "../../../../../environments/environment";
 import {IMovie} from "../../interfaces";
-import {imageURL} from "../../../../constants";
+
+const {baseImageURL} = environment;
 
 @Component({
   selector: 'app-movie',
@@ -17,6 +19,8 @@ export class MovieComponent implements OnInit {
   imageEndpoint: string;
   image: string;
   currentPage: Observable<any>;
+  @Input()
+  isDarkTheme: boolean;
 
   constructor(
     private router: Router,
@@ -24,7 +28,7 @@ export class MovieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.image = `${imageURL}${this.imageEndpoint}`;
+    this.image = `${baseImageURL}${this.imageEndpoint}`;
   }
 
   navigateToInfo(): void {
@@ -37,9 +41,10 @@ export class MovieComponent implements OnInit {
       state: {movie: this.movie},
       queryParams: {page: this.currentPage}
     }).then();
+
     window.scroll({
-      top: 0,
-      behavior: 'auto'
+      top: 0, left: 0,
+      behavior: 'smooth'
     });
   }
 

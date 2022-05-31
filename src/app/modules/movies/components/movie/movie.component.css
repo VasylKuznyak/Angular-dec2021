@@ -6,8 +6,15 @@
 
 .movieCard_title {
   font-family: var(--font);
-  color: var(--darkText);
   text-align: center;
+}
+
+.movieCard_title_dark {
+  color: var(--lightText);
+}
+
+.movieCard_title_light {
+  color: var(--darkText);
 }
 
 .movieCard:hover {
@@ -18,7 +25,7 @@
 
 .movieCard_image {
   width: 100%;
-  box-shadow: 0 0 1em black;
+  box-shadow: 0 0 1em var(--darkBackground);
 }
 
 .movieCard_rating:before {
@@ -27,12 +34,12 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  content:"";
+  content: "";
 }
 
 .movieCard_rating {
   position: relative;
-  color: white;
+  color: var(--lightText);
   -webkit-text-stroke: 1px var(--colorText);
   top: 40px;
   left: 10px;

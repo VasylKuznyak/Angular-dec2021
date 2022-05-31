@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule, Routes} from '@angular/router';
+import {NgModule} from '@angular/core';
 
 import {MovieInfoComponent, MoviesListComponent} from "./components";
 

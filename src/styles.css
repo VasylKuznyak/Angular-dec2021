@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
+:root {
+  --darkText: black;
+  --lightText: snow;
+  --darkBackground: #001f3f;
+  --lightBackground: #CADFF4;
+  --colorText: deepskyblue;
+  --font: 'Karla', sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --darkText: rgb(40,40,40);
-  --darkBackground: rgb(40,40,40);
-  --lightText: rgb(240,240,240);
-  --lightBackground: rgb(160,160,160);
-  --colorText: deepskyblue;
-  --font: 'Karla', sans-serif;
 }
 

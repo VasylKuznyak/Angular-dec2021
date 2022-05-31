@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 import {map, Observable} from "rxjs";
+
+import {DataService} from "../../modules";
 
 @Component({
   selector: 'app-header',
@@ -9,14 +11,21 @@ import {map, Observable} from "rxjs";
 })
 export class HeaderComponent implements OnInit {
   currentPage: Observable<any>;
+  isDarkTheme: boolean;
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private dataService: DataService) {
   }
 
   ngOnInit(): void {
     this.setPaginate();
+    this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
+  }
+
+  toggleTheme() {
+    this.dataService.storageTheme.next(!this.isDarkTheme);
   }
 
   setPaginate(): void {

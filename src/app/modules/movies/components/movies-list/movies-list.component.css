@@ -4,3 +4,11 @@
   justify-content: space-around;
   padding: 60px 0;
 }
+
+.lightTheme {
+  background-color: var(--lightBackground);
+}
+
+.darkTheme {
+  background-color: var(--darkBackground);
+}

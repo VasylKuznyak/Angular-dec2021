@@ -1,10 +1,10 @@
 import {environment} from "../../environments/environment";
 
-export const imageURL = 'https://image.tmdb.org/t/p/w500';
-const {baseURL} = environment;
+const {baseURL, baseImageURL} = environment;
 
 export const urls = {
   movies: `${baseURL}/discover/movie`,
   movie: `${baseURL}/movie`,
   genre: `${baseURL}/genre/movie/list`,
+  image: `${baseImageURL}`
 }

@@ -1,12 +1,11 @@
-import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 
+import {environment} from "../../../../../environments/environment";
 import {MoviesService} from "../../services";
 import {IMovie} from "../../interfaces";
-import {imageURL} from "../../../../constants";
-import {environment} from "../../../../../environments/environment";
 
-const {apiKey} = environment;
+const {baseImageURL} = environment;
 
 @Component({
   selector: 'app-movie-info',
@@ -29,13 +28,14 @@ export class MovieInfoComponent implements OnInit {
       if (state) {
         this.movie = state;
       } else {
-        this.moviesService.getById(id, apiKey).subscribe(movie => {
+        this.moviesService.getById(id).subscribe(movie => {
           this.movie = movie;
         });
       }
-      this.moviesService.getMovieImage(id, apiKey).subscribe(value => {
-        const {file_path} = value.backdrops[0]
-        this.image = `${imageURL}${file_path}`;
+      this.moviesService.getMovieImage(id).subscribe(value => {
+        const differentPosters = value.backdrops.length;
+        const {file_path} = value.backdrops[Math.floor(Math.random() * differentPosters)]
+        this.image = `${baseImageURL}${file_path}`;
       })
     });
   }

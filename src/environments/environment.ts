@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   baseURL: 'https://api.themoviedb.org/3',
-  apiKey: 'c21c4736c06ada4156758164d503e231'
+  baseImageURL: 'https://image.tmdb.org/t/p/w500',
+  token: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjMjFjNDczNmMwNmFkYTQxNTY3NTgxNjRkNTAzZTIzMSIsInN1YiI6IjYyOTI0Yjg3N2Q1ZGI1MTBhNjY0NjE2OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.uTLDL8GiULChQ1Fn4SH-l9CJKsyWZXhiKIWfjZmxmVw',
 };
 
 /*

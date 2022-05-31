@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 
-import {environment} from "../../../../../environments/environment";
-import {MoviesService} from "../../services";
+import {DataService, MoviesService} from "../../services";
 import {IMovie} from "../../interfaces";
-
-const {apiKey} = environment;
 
 @Component({
   selector: 'app-movies-list',
@@ -15,15 +12,18 @@ const {apiKey} = environment;
 export class MoviesListComponent implements OnInit {
   movies: IMovie[];
   page: number;
+  isDarkTheme: boolean;
 
   constructor(
     private moviesService: MoviesService,
-    private activatedRoute: ActivatedRoute) {
+    private activatedRoute: ActivatedRoute,
+    private dataService: DataService) {
   }
 
   ngOnInit(): void {
-    this.activatedRoute.queryParams.subscribe(({page, key}) => {
-      this.moviesService.getAll(page ? page : 1, apiKey).subscribe(({results}) => {
+    this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
+    this.activatedRoute.queryParams.subscribe(({page}) => {
+      this.moviesService.getAll(page ? page : 1).subscribe(({results}) => {
         this.movies = results;
       })
     });

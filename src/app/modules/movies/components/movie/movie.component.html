@@ -1,5 +1,8 @@
 <div class="movieCard" (click)="navigateToInfo()">
   <h2 class="movieCard_rating">{{movie.vote_average}}</h2>
   <img class="movieCard_image" src="{{image}}" alt="{{movie.title}}">
-  <h4 class="movieCard_title">{{movie.title}}</h4>
+  <h4
+    [ngClass]="isDarkTheme ? 'movieCard_title_dark' : 'movieCard_title_light'"
+    class="movieCard_title">{{movie.title}}
+  </h4>
 </div>
