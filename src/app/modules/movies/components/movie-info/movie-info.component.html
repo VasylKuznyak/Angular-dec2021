@@ -1,9 +1,14 @@
 <div class="movieInfo" *ngIf="movie">
-  <img class="movieInfo_image" src="{{image}}" alt="{{movie.title}}">
-  <div class="movieInfo_description">
-    <h1>{{movie?.title}}</h1>
-    <p>{{movie?.overview}}</p>
-    <h4>RELEASE DATE {{movie?.release_date}}</h4>
-    <h4>RATING {{movie?.vote_average}}</h4>
+
+  <div class="movieInfo_description"
+       [ngStyle]="{
+       'background-image': 'url(' + image + ')',
+       'background-repeat': 'no-repeat',
+       'background-size': 'cover',
+       'opacity': 0.9}">
+    <h1 class="movieInfo_description_title">{{movie.title?.toUpperCase()}}</h1>
+    <p>{{movie.overview}}</p>
+    <h3>RELEASE DATE {{movie.release_date}}</h3>
+    <h4>RATING {{movie.vote_average}}</h4>
   </div>
 </div>

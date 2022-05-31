@@ -1,17 +1,26 @@
 .movieInfo {
   display: flex;
   justify-content: center;
+  padding-top: 100px;
 }
 
 .movieInfo_description {
-  color: var(--darkText);
+  border-radius: 10px;
+  box-shadow: 0 0 2em black;
+  color: var(--lightText);
+  font-size: 2em;
+  -webkit-text-stroke: 1px var(--darkText);
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding: 1em 2em;
   width: 50vw;
 }
 
-.movieInfo_image {
-  width: 100vw;
+.movieInfo_description_title {
+  -webkit-text-stroke: 1px var(--colorText);
+}
+
+.movieInfo_description h3 {
+  padding: .5em;
 }

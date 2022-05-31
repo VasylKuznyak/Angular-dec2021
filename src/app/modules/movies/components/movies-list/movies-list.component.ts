@@ -24,10 +24,11 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(({page, key}) => {
       this.moviesService.getAll(page ? page : 1, apiKey).subscribe(({results}) => {
-          this.movies = results;
-        })
+        this.movies = results;
+      })
     });
   }
+
 }
 
 

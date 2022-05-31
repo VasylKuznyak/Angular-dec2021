@@ -16,6 +16,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.setPaginate();
+  }
+
+  setPaginate(): void {
     this.currentPage = this.activatedRoute.queryParamMap.pipe(
       map((params: ParamMap) => params.get('page')));
     this.currentPage.subscribe(page => this.currentPage = page);

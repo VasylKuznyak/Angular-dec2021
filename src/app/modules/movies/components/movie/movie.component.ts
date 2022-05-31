@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {map, Observable} from "rxjs";
 
 import {IMovie} from "../../interfaces";
 import {imageURL} from "../../../../constants";
@@ -15,6 +16,7 @@ export class MovieComponent implements OnInit {
   @Input()
   imageEndpoint: string;
   image: string;
+  currentPage: Observable<any>;
 
   constructor(
     private router: Router,
@@ -26,13 +28,18 @@ export class MovieComponent implements OnInit {
   }
 
   navigateToInfo(): void {
+    this.currentPage = this.activatedRoute.queryParamMap.pipe(
+      map((params: ParamMap) => params.get('page')));
+    this.currentPage.subscribe(page => this.currentPage = page);
+
     this.router.navigate([this.movie.id], {
       relativeTo: this.activatedRoute,
       state: {movie: this.movie},
+      queryParams: {page: this.currentPage}
     }).then();
     window.scroll({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'auto'
     });
   }
 

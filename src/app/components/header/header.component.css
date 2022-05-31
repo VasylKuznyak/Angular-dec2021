@@ -4,7 +4,7 @@
   background-color: rgb(0, 0, 0);
   font-family: var(--font);
   display: flex;
-  column-gap: 383px;
+  column-gap: 420px;
   align-items: center;
   padding: 10px 20px;
   position: fixed;
@@ -22,6 +22,7 @@
 
 .header_links h2 {
   color: var(--colorText);
+  font-size: 2em;
 }
 
 .header_links h2:hover {
@@ -30,15 +31,11 @@
 }
 
 .header_link {
-  margin: 0 100px;
+  margin: 0 60px;
   text-decoration: none;
   font-family: var(--font);
   color: var(--colorText);
   font-size: 1.5em;
-}
-
-.header_link:hover {
-  cursor: pointer;
 }
 
 .header_image_user {
