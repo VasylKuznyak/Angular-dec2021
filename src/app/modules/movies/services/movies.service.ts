@@ -21,13 +21,13 @@ export class MoviesService {
       {params: {page, language: this.language}});
   }
 
-  getById(id: string): Observable<IMovie> {
+  getById(id: number): Observable<IMovie> {
     return this.httpClient.get<IMovie>(`${urls.movie}/${id}`,
       {params: {language: this.language}})
   }
 
   getMovieImage(id: string): Observable<IImages> {
-    return this.httpClient.get<IImages>(`${urls.movie}/${id}/images`)
+    return this.httpClient.get<IImages>(`${urls.movie}/${id}/images`);
   }
 
 }

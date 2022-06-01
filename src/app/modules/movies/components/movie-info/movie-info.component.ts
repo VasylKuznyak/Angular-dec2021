@@ -26,13 +26,11 @@ export class MovieInfoComponent implements OnInit {
       if (state) {
         this.movie = state;
       } else {
-        this.moviesService.getById(id).subscribe(movie => {
-          this.movie = movie;
-        });
+        this.moviesService.getById(id).subscribe(movie => this.movie = movie);
       }
       this.moviesService.getMovieImage(id).subscribe(value => {
         const differentPosters = value.backdrops.length;
-        const {file_path} = value.backdrops[Math.floor(Math.random() * differentPosters)]
+        const {file_path} = value.backdrops[Math.floor(Math.random() * differentPosters)];
         this.image = `${urls.image}${file_path}`;
       })
     });

@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
 import {BrowserModule} from "@angular/platform-browser";
+import {NgModule} from '@angular/core';
 
-import {AppComponent} from "./app.component";
 import {AppRoutingModule} from './app-routing.module';
-import {MainLayoutComponent} from './layouts';
-import {HeaderComponent} from './components';
 import {HttpClientModule} from "@angular/common/http";
+import {MainLayoutComponent} from './layouts';
+import {AppComponent} from "./app.component";
+import {HeaderComponent} from './components';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent]
 })

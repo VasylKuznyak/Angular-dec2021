@@ -21,6 +21,8 @@
   -webkit-text-stroke: 1px var(--colorText);
 }
 
-.movieInfo_description h3 {
-  padding: .5em;
+.movieInfo_description_site {
+  font-size: .5em;
+  margin-top: 10px;
+  color: var(--colorText);
 }

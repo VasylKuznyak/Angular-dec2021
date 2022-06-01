@@ -23,7 +23,7 @@ import {
   imports: [
     MoviesRoutingModule,
     CommonModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [
     MoviesService,

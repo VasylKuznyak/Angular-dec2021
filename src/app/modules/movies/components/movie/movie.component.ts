@@ -1,7 +1,7 @@
 import {ActivatedRoute, Router} from "@angular/router";
 import {Component, Input, OnInit} from '@angular/core';
 
-import {DataService} from "../../services";
+import {DataService, MoviesService} from "../../services";
 import {urls} from "../../../../constants";
 import {IMovie} from "../../interfaces";
 
@@ -12,7 +12,8 @@ import {IMovie} from "../../interfaces";
 })
 export class MovieComponent implements OnInit {
   @Input()
-  imageEndpoint: string;
+  imageEndPoint: string;
+  movieDetails: IMovie;
   @Input()
   isDarkTheme: boolean;
   @Input()
@@ -21,28 +22,31 @@ export class MovieComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private moviesService: MoviesService,
     private dataService: DataService,
     private router: Router) {
   }
 
   ngOnInit(): void {
-    this.image = `${urls.image}${this.imageEndpoint}`;
-
-    console.log(this.movie)
+    this.moviesService.getById(this.movie.id).subscribe(movie => {
+      this.movieDetails = movie;
+      this.image = `${urls.image}${this.imageEndPoint}`;
+     });
   }
 
   navigateToInfo(): void {
     this.dataService.storagePage.subscribe(page => {
       this.router.navigate([this.movie.id], {
         relativeTo: this.activatedRoute,
-        state: {movie: this.movie},
-        queryParams: {page: page}
+        state: {movie: this.movieDetails},
+        queryParams: {page: page},
       }).then();
     });
 
     window.scroll({
-      top: 0, left: 0,
-      behavior: 'smooth',
+      top: 0,
+      left: 100,
+      behavior: 'smooth'
     });
   }
 }

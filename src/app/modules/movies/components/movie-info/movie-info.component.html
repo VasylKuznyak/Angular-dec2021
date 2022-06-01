@@ -7,7 +7,9 @@
        'background-size': 'cover'}">
     <h1 class="movieInfo_description_title">{{movie.title?.toUpperCase()}}</h1>
     <p>{{movie.overview}}</p>
+    <h2 *ngIf="movie.budget">Бюджет: {{movie.budget}} $</h2>
     <h3>Дата релізу: {{movie.release_date}}</h3>
     <h4>Рейтинг: {{movie.vote_average}}</h4>
+    <p class="movieInfo_description_site">{{movie.homepage}}</p>
   </div>
 </div>
