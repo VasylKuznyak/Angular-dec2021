@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 
 import {IImages, IMovie, IMovies} from "../interfaces";
@@ -25,4 +25,5 @@ export class MoviesService {
   getMovieImage(id: string): Observable<IImages> {
     return this.httpClient.get<IImages>(`${urls.movie}/${id}/images`)
   }
+
 }

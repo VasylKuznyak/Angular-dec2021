@@ -5,6 +5,6 @@ const {baseURL, baseImageURL} = environment;
 export const urls = {
   movies: `${baseURL}/discover/movie`,
   movie: `${baseURL}/movie`,
-  genre: `${baseURL}/genre/movie/list`,
+  genres: `${baseURL}/genre/movie/list`,
   image: `${baseImageURL}`
 }

@@ -1,3 +1,5 @@
+import {IGenre} from "./genre.interface";
+
 export interface IMovie {
   adult: boolean;
   backdrop_path: string;
@@ -12,5 +14,6 @@ export interface IMovie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  genre_ids: IGenre[]
 }
 

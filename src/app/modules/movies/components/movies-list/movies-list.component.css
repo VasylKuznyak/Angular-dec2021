@@ -5,6 +5,10 @@
   padding: 60px 0;
 }
 
+.moviesAndGenres{
+  display: flex;
+}
+
 .lightTheme {
   background-color: var(--lightBackground);
 }

@@ -1,0 +1,9 @@
+.singleGenre {
+  text-align: center;
+  padding: .5em 0;
+}
+
+.singleGenre:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}

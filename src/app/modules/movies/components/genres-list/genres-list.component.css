@@ -1,0 +1,14 @@
+.listOfGenres {
+  height: 100vh;
+  width: 260px;
+  font-family: var(--font);
+  padding: 80px 20px;
+}
+
+.darkTheme{
+  color: var(--lightText);
+}
+
+.lightTheme{
+  color: var(--darkText);
+}

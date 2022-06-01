@@ -5,7 +5,7 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class DataService {
-  storageTheme = new BehaviorSubject<boolean>(false)
+  storageTheme = new BehaviorSubject<boolean>(false);
 
   constructor() {
   }
