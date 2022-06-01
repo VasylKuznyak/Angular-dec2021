@@ -10,20 +10,20 @@ import {urls} from "../../../constants";
 })
 
 export class MoviesService {
-  private _language = 'uk-UA';
+  language: string = 'uk-UA';
   movies: IMovies;
 
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(page: number = 1): Observable<IMovies> {
+  getAll(page: number): Observable<IMovies> {
     return this.httpClient.get<IMovies>(`${urls.movies}`,
-      {params: {page, language: this._language}});
+      {params: {page, language: this.language}});
   }
 
   getById(id: string): Observable<IMovie> {
     return this.httpClient.get<IMovie>(`${urls.movie}/${id}`,
-      {params: {language: this._language}})
+      {params: {language: this.language}})
   }
 
   getMovieImage(id: string): Observable<IImages> {

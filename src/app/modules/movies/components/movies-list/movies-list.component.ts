@@ -10,23 +10,22 @@ import {IMovie} from "../../interfaces";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
+  isDarkTheme: boolean;
   movies: IMovie[];
   page: number;
-  isDarkTheme: boolean;
 
   constructor(
-    private moviesService: MoviesService,
     private activatedRoute: ActivatedRoute,
+    private moviesService: MoviesService,
     private dataService: DataService) {
   }
 
   ngOnInit(): void {
     this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
-
-    this.activatedRoute.queryParams.subscribe(({page}) => {
-      this.moviesService.getAll(page ).subscribe(({results}) => {
+    this.dataService.storagePage.subscribe(page => {
+      this.moviesService.getAll(page).subscribe(({results}) => {
         this.movies = results;
-      })
+      });
     });
   }
 

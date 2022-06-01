@@ -9,11 +9,13 @@ import {IGenres} from "../interfaces";
   providedIn: 'root'
 })
 export class GenresService {
+  language: string = 'uk-UA';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getAll(): Observable<IGenres> {
-    return this.httpClient.get<IGenres>(urls.genres, {params: {language:'uk-UA'}});
+    return this.httpClient.get<IGenres>(urls.genres,
+      {params: {language: this.language}});
   }
 }

@@ -9,8 +9,8 @@ import {IGenre} from "../../interfaces";
   styleUrls: ['./genres-list.component.css']
 })
 export class GenresListComponent implements OnInit {
-  genres: IGenre[];
   isDarkTheme: boolean;
+  genres: IGenre[];
 
   constructor(
     private genresService: GenresService,

@@ -13,9 +13,9 @@ export class HeaderComponent implements OnInit {
   page: number;
 
   constructor(
-    private router: Router,
     private activatedRoute: ActivatedRoute,
-    private dataService: DataService) {
+    private dataService: DataService,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit {
   setPaginate(): void {
     this.activatedRoute.queryParams.subscribe(({page}) => {
       this.dataService.storagePage.subscribe(page => this.page = page);
+
       this.router.navigate(
         [],
         {queryParams: {page: this.page}}).then();
@@ -44,10 +45,9 @@ export class HeaderComponent implements OnInit {
   }
 
   pageBack(): void {
-    this.dataService.storagePage.next(this.page = 1 ? 1 : -1);
+    this.dataService.storagePage.next(this.page > 1 ? this.page - 1 : 1);
     this.router.navigate(
       [],
-      {queryParams: {page: this.page = 1 ? 1 : -1}}).then();
+      {queryParams: {page: this.page > 1 ? this.page - 1 : 1}}).then();
   }
-
 }

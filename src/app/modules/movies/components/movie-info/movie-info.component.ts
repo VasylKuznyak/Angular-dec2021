@@ -1,11 +1,9 @@
 import {ActivatedRoute, Router} from "@angular/router";
 import {Component, OnInit} from '@angular/core';
 
-import {environment} from "../../../../../environments/environment";
 import {MoviesService} from "../../services";
+import {urls} from "../../../../constants";
 import {IMovie} from "../../interfaces";
-
-const {baseImageURL} = environment;
 
 @Component({
   selector: 'app-movie-info',
@@ -18,8 +16,8 @@ export class MovieInfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private moviesService: MoviesService) {
+    private moviesService: MoviesService,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -35,7 +33,7 @@ export class MovieInfoComponent implements OnInit {
       this.moviesService.getMovieImage(id).subscribe(value => {
         const differentPosters = value.backdrops.length;
         const {file_path} = value.backdrops[Math.floor(Math.random() * differentPosters)]
-        this.image = `${baseImageURL}${file_path}`;
+        this.image = `${urls.image}${file_path}`;
       })
     });
   }
