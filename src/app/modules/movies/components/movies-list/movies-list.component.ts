@@ -22,11 +22,14 @@ export class MoviesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
-    this.dataService.storagePage.subscribe(page => {
-      this.moviesService.getAll(page).subscribe(({results}) => this.movies = results);
+    this.dataService.storageGenre.subscribe(genre => {
+      this.dataService.storagePage.subscribe(page => {
+        this.moviesService.getAll(page, genre as number).subscribe(({results}) => {
+          this.movies = results
+        });
+      });
     });
   }
-
 }
 
 

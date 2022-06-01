@@ -5,6 +5,7 @@
        'background-image': 'url(' + image + ')',
        'background-repeat': 'no-repeat',
        'background-size': 'cover'}">
+
     <h1 class="movieInfo_description_title">{{movie.title?.toUpperCase()}}</h1>
     <p>{{movie.overview}}</p>
     <h2 *ngIf="movie.budget">Бюджет: {{movie.budget}} $</h2>

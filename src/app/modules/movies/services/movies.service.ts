@@ -16,9 +16,9 @@ export class MoviesService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(page: number): Observable<IMovies> {
+  getAll(page: number, genre: number): Observable<IMovies> {
     return this.httpClient.get<IMovies>(`${urls.movies}`,
-      {params: {page, language: this.language}});
+      {params: {page, language: this.language, genre}});
   }
 
   getById(id: number): Observable<IMovie> {
