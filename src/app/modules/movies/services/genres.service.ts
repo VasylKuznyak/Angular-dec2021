@@ -14,6 +14,6 @@ export class GenresService {
   }
 
   getAll(): Observable<IGenres> {
-    return this.httpClient.get<IGenres>(urls.genres);
+    return this.httpClient.get<IGenres>(urls.genres, {params: {language:'uk-UA'}});
   }
 }
