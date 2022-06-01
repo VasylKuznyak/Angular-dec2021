@@ -8,18 +8,22 @@ import {urls} from "../../../constants";
 @Injectable({
   providedIn: 'root'
 })
+
 export class MoviesService {
+  private _language = 'uk-UA';
   movies: IMovies;
 
   constructor(private httpClient: HttpClient) {
   }
 
   getAll(page: number = 1): Observable<IMovies> {
-    return this.httpClient.get<IMovies>(`${urls.movies}`, {params: {page, language:'uk-UA'}});
+    return this.httpClient.get<IMovies>(`${urls.movies}`,
+      {params: {page, language: this._language}});
   }
 
   getById(id: string): Observable<IMovie> {
-    return this.httpClient.get<IMovie>(`${urls.movie}/${id}`, {params: {language:'uk-UA'}})
+    return this.httpClient.get<IMovie>(`${urls.movie}/${id}`,
+      {params: {language: this._language}})
   }
 
   getMovieImage(id: string): Observable<IImages> {

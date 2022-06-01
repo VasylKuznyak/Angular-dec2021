@@ -22,8 +22,9 @@ export class MoviesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
+
     this.activatedRoute.queryParams.subscribe(({page}) => {
-      this.moviesService.getAll(page ? page : 1).subscribe(({results}) => {
+      this.moviesService.getAll(page ).subscribe(({results}) => {
         this.movies = results;
       })
     });

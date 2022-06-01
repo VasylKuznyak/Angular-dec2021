@@ -1,6 +1,5 @@
-import {ActivatedRoute, ParamMap, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Component, OnInit} from '@angular/core';
-import {map, Observable} from "rxjs";
 
 import {DataService} from "../../modules";
 
@@ -10,8 +9,8 @@ import {DataService} from "../../modules";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  currentPage: Observable<any>;
   isDarkTheme: boolean;
+  page: number;
 
   constructor(
     private router: Router,
@@ -29,24 +28,26 @@ export class HeaderComponent implements OnInit {
   }
 
   setPaginate(): void {
-    this.currentPage = this.activatedRoute.queryParamMap.pipe(
-      map((params: ParamMap) => params.get('page')));
-    this.currentPage.subscribe(page => this.currentPage = page);
-    this.router.navigate(
-      [],
-      {queryParams: {page: 1}}).then();
+    this.activatedRoute.queryParams.subscribe(({page}) => {
+      this.dataService.storagePage.subscribe(page => this.page = page);
+      this.router.navigate(
+        [],
+        {queryParams: {page: this.page}}).then();
+    });
   }
 
   pageForward(): void {
+    this.dataService.storagePage.next(this.page + 1);
     this.router.navigate(
       [],
-      {queryParams: {page: +this.currentPage + 1}}).then();
+      {queryParams: {page: this.page}}).then();
   }
 
   pageBack(): void {
+    this.dataService.storagePage.next(this.page = 1 ? 1 : -1);
     this.router.navigate(
       [],
-      {queryParams: {page: +this.currentPage - 1}}).then();
+      {queryParams: {page: this.page = 1 ? 1 : -1}}).then();
   }
 
 }

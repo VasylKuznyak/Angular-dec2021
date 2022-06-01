@@ -5,10 +5,16 @@
   padding: 80px 20px;
 }
 
-.darkTheme{
+.darkTheme {
   color: var(--lightText);
 }
 
-.lightTheme{
+.lightTheme {
   color: var(--darkText);
+}
+
+.listOfGenres_title {
+  font-size: 2.5em;
+  text-align: center;
+  color: var(--colorText);
 }

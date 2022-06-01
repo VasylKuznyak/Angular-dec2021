@@ -1,3 +1,4 @@
 <div class="listOfGenres" [ngClass]="isDarkTheme ? 'darkTheme' : 'lightTheme'">
+  <h2 class="listOfGenres_title">ЖАНРИ:</h2>
   <app-genre *ngFor="let genre of genres" [genre]="genre"></app-genre>
 </div>

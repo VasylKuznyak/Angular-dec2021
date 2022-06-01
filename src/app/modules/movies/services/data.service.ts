@@ -6,6 +6,7 @@ import {BehaviorSubject} from "rxjs";
 })
 export class DataService {
   storageTheme = new BehaviorSubject<boolean>(false);
+  storagePage = new BehaviorSubject<number>(1);
 
   constructor() {
   }
