@@ -4,16 +4,23 @@
   opacity: .8;
 }
 
-.movieCard_title {
+.movieCard_genres {
   font-family: var(--font);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.movieCard_title_dark {
+.movieCard_genres p{
+  font-size: .9em;
+  margin: 2px;
+}
+
+.movieCard_genres_dark {
   color: var(--lightText);
 }
 
-.movieCard_title_light {
+.movieCard_genres_light {
   color: var(--darkText);
 }
 

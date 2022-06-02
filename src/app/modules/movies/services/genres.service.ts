@@ -2,20 +2,19 @@ import {HttpClient} from "@angular/common/http";
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 
-import {urls} from "../../../constants";
+import {urls, language} from "../../../constants";
 import {IGenres} from "../interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GenresService {
-  language: string = 'uk-UA';
 
   constructor(private httpClient: HttpClient) {
   }
 
   getAll(): Observable<IGenres> {
     return this.httpClient.get<IGenres>(urls.genres,
-      {params: {language: this.language}});
+      {params: {language: language}});
   }
 }

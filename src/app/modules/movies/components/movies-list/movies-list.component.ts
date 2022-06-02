@@ -25,7 +25,7 @@ export class MoviesListComponent implements OnInit {
     this.dataService.storageGenre.subscribe(genre => {
       this.dataService.storagePage.subscribe(page => {
         this.moviesService.getAll(page, genre as number).subscribe(({results}) => {
-          this.movies = results
+          this.movies = results;
         });
       });
     });

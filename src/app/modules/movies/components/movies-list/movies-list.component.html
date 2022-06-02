@@ -1,4 +1,6 @@
-<section [ngClass]="isDarkTheme ? 'darkTheme' : 'lightTheme'">
+<section
+  *ngIf="movies"
+  [ngClass]="isDarkTheme ? 'darkTheme' : 'lightTheme'">
   <router-outlet></router-outlet>
   <div class="moviesAndGenres">
     <div class="listOfMovies">

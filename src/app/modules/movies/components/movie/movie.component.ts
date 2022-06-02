@@ -2,8 +2,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {Component, Input, OnInit} from '@angular/core';
 
 import {DataService, MoviesService} from "../../services";
+import {IGenre, IMovie} from "../../interfaces";
 import {urls} from "../../../../constants";
-import {IMovie} from "../../interfaces";
 
 @Component({
   selector: 'app-movie',
@@ -16,6 +16,7 @@ export class MovieComponent implements OnInit {
   movieDetails: IMovie;
   @Input()
   isDarkTheme: boolean;
+  genres: IGenre[];
   @Input()
   movie: IMovie;
   image: string;
@@ -29,9 +30,10 @@ export class MovieComponent implements OnInit {
 
   ngOnInit(): void {
     this.moviesService.getById(this.movie.id).subscribe(movie => {
-      this.movieDetails = movie;
       this.image = `${urls.image}${this.imageEndPoint}`;
-     });
+      this.movieDetails = movie;
+      this.genres = [...this.movieDetails.genres]
+    });
   }
 
   navigateToInfo(): void {
@@ -40,6 +42,7 @@ export class MovieComponent implements OnInit {
         relativeTo: this.activatedRoute,
         state: {movie: this.movieDetails},
         queryParams: {page: page},
+        queryParamsHandling: "merge"
       }).then();
     });
 

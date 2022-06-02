@@ -29,7 +29,8 @@ export class GenreComponent implements OnInit {
       this.dataService.storageGenre.next(id);
       this.router.navigate(
         [],
-        {queryParams: {with_genres: id}}).then();
+        {queryParams: {genres: this.genre.name.toLowerCase()},
+          queryParamsHandling: "merge"}).then();
     });
   }
 }

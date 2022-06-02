@@ -18,6 +18,12 @@ export interface IMovie {
   homepage: string;
   revenue: number;
   genres: IGenre[];
+  production_companies: IProducers[]
+}
+
+export interface IProducers {
+  id: number;
+  name: string;
 }
 
 

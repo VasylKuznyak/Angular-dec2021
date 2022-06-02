@@ -5,9 +5,9 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class DataService {
+  storageGenre = new BehaviorSubject<number | null>(null);
   storageTheme = new BehaviorSubject<boolean>(false);
   storagePage = new BehaviorSubject<number>(1);
-  storageGenre = new BehaviorSubject<number | null>(null);
 
   constructor() {
   }
