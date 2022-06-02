@@ -22,4 +22,7 @@ export class GenresListComponent implements OnInit {
     this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
   }
 
+  resetFilters() {
+    this.dataService.storageGenre.next(null);
+  }
 }
