@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 import {DataService} from "../../services";
 import {IGenre} from "../../interfaces";
@@ -15,7 +15,8 @@ export class GenreComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private dataService: DataService) {
+    private dataService: DataService,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -26,7 +27,18 @@ export class GenreComponent implements OnInit {
     const {id} = this.genre;
     this.activatedRoute.queryParams.subscribe(({with_genres}) => {
       this.dataService.storageGenre.next(id);
+      this.router.navigate(
+        [],
+        {
+          relativeTo: this.activatedRoute,
+          queryParams: {genre: this.genre.name.toLowerCase()},
+          queryParamsHandling: "merge",
+        }).then();
     });
   }
 }
 
+
+// ngOnInit() {
+//   this.route.queryParamMap.subscribe(params => this.words = params.getAll('words'));
+// }

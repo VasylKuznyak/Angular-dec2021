@@ -5,4 +5,8 @@
     class="listOfGenres_title">
     ЖАНРИ:</h2>
   <app-genre *ngFor="let genre of genres" [genre]="genre"></app-genre>
+  <h5
+    class="listOfGenres_reset"
+    (click)="resetFilters()">
+    СКИНУТИ ФІЛЬТР</h5>
 </div>

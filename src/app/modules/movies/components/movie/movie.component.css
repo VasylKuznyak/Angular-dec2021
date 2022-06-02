@@ -11,7 +11,7 @@
   flex-wrap: wrap;
 }
 
-.movieCard_genres p{
+.movieCard_genres p {
   font-size: .9em;
   margin: 2px;
 }
@@ -24,15 +24,15 @@
   color: var(--darkText);
 }
 
-.movieCard:hover {
-  cursor: pointer;
-  transform: scale(1.07);
-  opacity: 1;
-}
-
 .movieCard_image {
   width: 100%;
   box-shadow: 0 0 1em var(--darkBackground);
+}
+
+.movieCard_image:hover {
+  cursor: pointer;
+  transform: scale(1.07);
+  opacity: 1;
 }
 
 .movieCard_rating:before {
@@ -50,5 +50,10 @@
   -webkit-text-stroke: .5px var(--colorText);
   top: 40px;
   left: 10px;
+}
+
+.movieCard_title {
+  text-align: center;
+  font-size: 1em;
 }
 

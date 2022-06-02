@@ -54,7 +54,6 @@ export class StarRatingComponent implements OnInit {
         return star;
       });
     }
-
     this.selectedRating = value;
   }
 }

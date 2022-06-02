@@ -1,7 +1,7 @@
 import {ActivatedRoute, Router} from "@angular/router";
 import {Component, OnInit} from '@angular/core';
 
-import {MoviesService} from "../../services";
+import {DataService, MoviesService} from "../../services";
 import {urls} from "../../../../constants";
 import {IMovie} from "../../interfaces";
 
@@ -16,6 +16,7 @@ export class MovieInfoComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private dataService: DataService,
     private moviesService: MoviesService,
     private router: Router) {
   }

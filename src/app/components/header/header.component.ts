@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
   setPaginate(): void {
     this.activatedRoute.queryParams.subscribe(({page}) => {
       this.dataService.storagePage.subscribe(page => this.page = page);
-
       this.router.navigate(
         [],
         {queryParams: {page: this.page}}).then();
@@ -48,6 +47,6 @@ export class HeaderComponent implements OnInit {
     this.dataService.storagePage.next(this.page > 1 ? this.page - 1 : 1);
     this.router.navigate(
       [],
-      {queryParams: {page: this.page > 1 ? this.page - 1 : 1}}).then();
+      {queryParams: {page: this.page}}).then();
   }
 }

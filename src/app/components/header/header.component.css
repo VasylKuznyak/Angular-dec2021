@@ -2,6 +2,7 @@
   width: 100vw;
   height: 40px;
   background-color: black;
+  border-bottom: 0.5px solid var(--lightText);
   font-family: var(--font);
   display: flex;
   justify-content: space-around;
