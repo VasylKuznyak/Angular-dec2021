@@ -2,8 +2,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {CommonModule} from '@angular/common';
 import {NgModule} from '@angular/core';
 
-import {GenresService, MoviesService} from "./services";
 import {MoviesRoutingModule} from './movies-routing.module';
+import {GenresService, MoviesService} from "./services";
 import {HttpModule} from "../../http.module";
 import {
   GenreComponent,

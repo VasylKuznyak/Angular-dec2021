@@ -1,6 +1,6 @@
 .movieCard {
   margin: 0 1em;
-  width: 13em;
+  width: 13.6em;
   opacity: .8;
 }
 
@@ -29,9 +29,9 @@
   box-shadow: 0 0 1em var(--darkBackground);
 }
 
-.movieCard_image:hover {
+.movieCard_hover:hover {
   cursor: pointer;
-  transform: scale(1.07);
+  transform: scale(1.05);
   opacity: 1;
 }
 
