@@ -34,6 +34,7 @@ export class GenreComponent implements OnInit {
           queryParams: {genre: this.genre.name.toLowerCase()},
           queryParamsHandling: "merge",
         }).then();
+      this.dataService.storageGenre.next(null);
     });
   }
 }

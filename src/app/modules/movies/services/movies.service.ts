@@ -17,7 +17,7 @@ export class MoviesService {
 
   getAll(page: number, with_genres: number): Observable<IMovies> {
     return this.httpClient.get<IMovies>(`${urls.movies}`,
-      {params: {page, with_genres}});
+      {params: {page, with_genres, language: language}});
   }
 
   getById(id: number): Observable<IMovie> {
