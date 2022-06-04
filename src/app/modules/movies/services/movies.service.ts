@@ -15,14 +15,14 @@ export class MoviesService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAll(page: number, with_genres: number): Observable<IMovies> {
+  getAll(page: number, with_genres: string): Observable<IMovies> {
     return this.httpClient.get<IMovies>(`${urls.movies}`,
       {params: {page, with_genres, language: language}});
   }
 
   getById(id: number): Observable<IMovie> {
     return this.httpClient.get<IMovie>(`${urls.movie}/${id}`,
-      {params: {language: language}})
+      {params: {language: language}});
   }
 
   getMovieImage(id: string): Observable<IImages> {

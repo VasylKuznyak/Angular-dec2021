@@ -21,7 +21,7 @@ import {
     MovieComponent,
     GenresListComponent,
     GenreComponent,
-    StarRatingComponent,
+    StarRatingComponent
   ],
   imports: [
     MoviesRoutingModule,

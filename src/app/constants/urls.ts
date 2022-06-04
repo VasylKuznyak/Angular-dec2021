@@ -6,5 +6,5 @@ export const urls = {
   genres: `${baseURL}/genre/movie/list`,
   movies: `${baseURL}/discover/movie`,
   movie: `${baseURL}/movie`,
-  image: `${baseImageURL}`
+  image: `${baseImageURL}`,
 }

@@ -10,6 +10,7 @@ import {IMovie} from "../../interfaces";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
+  listOfGenresId: string;
   isDarkTheme: boolean;
   movies: IMovie[];
   page: number;
@@ -23,8 +24,9 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.storageTheme.subscribe(theme => this.isDarkTheme = theme);
     this.dataService.storageGenre.subscribe(genre => {
+      this.listOfGenresId = genre.join(',');
       this.dataService.storagePage.subscribe(page => {
-        this.moviesService.getAll(page, genre as number).subscribe(({results}) => {
+        this.moviesService.getAll(page, this.listOfGenresId).subscribe(({results}) => {
           this.movies = results;
         });
       });

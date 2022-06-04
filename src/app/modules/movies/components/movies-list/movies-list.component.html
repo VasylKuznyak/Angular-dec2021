@@ -2,6 +2,7 @@
   *ngIf="movies"
   [ngClass]="isDarkTheme ? 'darkTheme' : 'lightTheme'">
   <router-outlet></router-outlet>
+
   <div class="moviesAndGenres">
     <div class="listOfMovies">
       <app-movie
@@ -11,6 +12,7 @@
         [isDarkTheme]="isDarkTheme">
       </app-movie>
     </div>
+
     <div>
       <app-genres-list></app-genres-list>
     </div>

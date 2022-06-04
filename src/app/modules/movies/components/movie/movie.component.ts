@@ -32,7 +32,7 @@ export class MovieComponent implements OnInit {
     this.moviesService.getById(this.movie.id).subscribe(movie => {
       this.image = `${urls.image}${this.imageEndPoint}`;
       this.movieDetails = movie;
-      this.genres = [...this.movieDetails.genres]
+      this.genres = [...this.movieDetails.genres];
     });
   }
 
@@ -42,14 +42,16 @@ export class MovieComponent implements OnInit {
         relativeTo: this.activatedRoute,
         state: {movie: this.movieDetails},
         queryParams: {page: page},
-        queryParamsHandling: "merge"
+        queryParamsHandling: "merge",
       }).then();
     });
 
-    window.scroll({
-      top: 0,
-      left: 100,
-      behavior: 'smooth'
-    });
+    setTimeout(() => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      })
+    }, 100);
   }
 }

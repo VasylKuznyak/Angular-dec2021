@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   setPaginate(): void {
-    this.activatedRoute.queryParams.subscribe(({page}) => {
+    this.activatedRoute.queryParams.subscribe(({page, genres}) => {
       this.dataService.storagePage.subscribe(page => this.page = page);
       this.router.navigate(
         [],
@@ -37,10 +37,12 @@ export class HeaderComponent implements OnInit {
   }
 
   pageForward(): void {
-    this.dataService.storagePage.next(this.page + 1);
-    this.router.navigate(
-      [],
-      {queryParams: {page: this.page}}).then();
+    this.dataService.storageTotalPages.subscribe(maxPage => {
+      this.dataService.storagePage.next(this.page === maxPage ? maxPage : this.page + 1);
+      this.router.navigate(
+        [],
+        {queryParams: {page: this.page}}).then();
+    });
   }
 
   pageBack(): void {
@@ -48,5 +50,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(
       [],
       {queryParams: {page: this.page}}).then();
+  }
+
+  resetPage() {
+    this.dataService.storagePage.next(1);
+    this.router.navigate(['/movies']).then()
   }
 }

@@ -2,11 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  width: 80%;
+  width: 82%;
+  min-height: 100vh;
   padding: 60px 0;
 }
 
-.moviesAndGenres{
+.moviesAndGenres {
   display: flex;
 }
 
@@ -17,6 +18,5 @@
 
 .darkTheme {
   transition-duration: 1s;
-
   background-color: var(--darkBackground);
 }

@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
 
 import {DataService, GenresService} from "../../services";
 import {IGenre} from "../../interfaces";
@@ -26,8 +26,6 @@ export class GenresListComponent implements OnInit {
   }
 
   resetFilters() {
-    this.dataService.storageGenre.next(null);
-
     this.activatedRoute.queryParams.subscribe(params => {
       const queries = {...params};
       delete queries['genre'];
@@ -37,5 +35,6 @@ export class GenresListComponent implements OnInit {
           queryParams: queries,
         }).then();
     });
+    this.dataService.storageGenre.next([]);
   }
 }

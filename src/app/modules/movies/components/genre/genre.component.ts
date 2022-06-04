@@ -10,8 +10,10 @@ import {IGenre} from "../../interfaces";
   styleUrls: ['./genre.component.css']
 })
 export class GenreComponent implements OnInit {
+  listGenresName: string;
   @Input()
   genre: IGenre;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,26 +22,22 @@ export class GenreComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
   }
 
   chooseGenre() {
-    const {id} = this.genre;
-    this.activatedRoute.queryParams.subscribe(({with_genres}) => {
-      this.dataService.storageGenre.next(id);
+    this.dataService.storageGenre.next([...this.dataService.storageGenre.value, this.genre.id]);
+    this.dataService.storageQueryGenre.next([...this.dataService.storageQueryGenre.value, this.genre.name]);
+
+    this.listGenresName = this.dataService.storageQueryGenre.value.join(',');
+
+    this.activatedRoute.queryParams.subscribe(({genre}) => {
       this.router.navigate(
         [],
         {
           relativeTo: this.activatedRoute,
-          queryParams: {genre: this.genre.name.toLowerCase()},
+          queryParams: {genre: this.listGenresName},
           queryParamsHandling: "merge",
         }).then();
-      this.dataService.storageGenre.next(null);
     });
   }
 }
-
-
-// ngOnInit() {
-//   this.route.queryParamMap.subscribe(params => this.words = params.getAll('words'));
-// }

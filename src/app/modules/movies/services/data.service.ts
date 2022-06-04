@@ -5,7 +5,9 @@ import {BehaviorSubject} from "rxjs";
   providedIn: 'root'
 })
 export class DataService {
-  storageGenre = new BehaviorSubject<number | null>(null);
+  storageQueryGenre = new BehaviorSubject<string[]>([]);
+  storageGenre = new BehaviorSubject<number[]>([]);
+  storageTotalPages = new BehaviorSubject<number>(500);
   storageTheme = new BehaviorSubject<boolean>(false);
   storagePage = new BehaviorSubject<number>(1);
 
