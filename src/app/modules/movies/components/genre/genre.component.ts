@@ -14,7 +14,6 @@ export class GenreComponent implements OnInit {
   @Input()
   genre: IGenre;
 
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private dataService: DataService,

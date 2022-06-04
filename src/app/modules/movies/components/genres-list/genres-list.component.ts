@@ -36,5 +36,6 @@ export class GenresListComponent implements OnInit {
         }).then();
     });
     this.dataService.storageGenre.next([]);
+    this.dataService.storageQueryGenre.next([]);
   }
 }

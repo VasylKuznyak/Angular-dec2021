@@ -36,5 +36,4 @@ export class MovieInfoComponent implements OnInit {
       })
     });
   }
-
 }
